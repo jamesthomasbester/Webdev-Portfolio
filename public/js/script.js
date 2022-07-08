@@ -4,14 +4,15 @@ fetch('https://api.github.com/users/jamesthomasbester/repos')
         result.forEach( element => {
             console.log(element)
             $('#body').append(`
-                <div class="card mb-3" style="max-width: 540px;">
+                <div class="card mb-3 ${element.language}" style="max-width: 540px;">
                     <div class="row g-0">
-                        <div class="col-md-4">
+                        <div class="col-md-4 text-center" style="padding: 10px; color: black;">
+                        <iframe src="https://jamesthomasbester.github.io/DailyTaskScheduler/"></iframe>
                         </div>
                         <div class="col-md-8">
                             <div class="card-body">
                                 <h5 class="card-title">${element.name}</h5>
-                                <p class="card-text">${element.html_url}</p>
+                                <a class="card-text">${element.html_url}</a>
                                 <p class="card-text"><small class="text-muted">${element.updated_at}</small></p>
                             </div>
                         </div>

@@ -1,15 +1,25 @@
 import React from "react";
-import { useState } from 'react';
+import { useEffect, useState } from "react";
+import Card from "./Card";
 
 const Projects = () => {
-    const [repos, setRepos] = useState([])
-    fetch('https://api.github.com/users/jamesthomasbester/repos')
-    .then(response => response.json())
-    .then(result => { result.forEach(item => setRepos.push(item))})
-    console.log(repos)
+    const [repo, setRepo] = useState([])
+
+    useEffect(() => {
+        fetch('https://api.github.com/users/jamesthomasbester/repos')
+        .then(response => response.json())
+        .then(result => setRepo(result))
+    }, [])
+
+    console.log(repo)
     return (
-        <div class="container d-flex flex-wrap justofy-content-center">
-            {repos.map( items => <h1>{items}</h1>)}
+        <div>
+            {repo.map(repo => (
+                <div key={repo.id}>
+                {repo.name}
+                </div>
+                // <Card key={repo.id} id={repo.id} language={repo.language} name={repo.name} htmlURL={repo.html_url} updatedAt={repo.updatedAt} />
+            ))}
         </div>
         )
 }

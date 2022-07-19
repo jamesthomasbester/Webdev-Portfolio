@@ -1,8 +1,8 @@
-import Body from "./components/body";
-import Footer from "./components/footer";
-import Header from "./components/header";
+import Body from "./components/Body";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 import About from "./components/About";
-import Projects from "./components/projects";
+import Projects from "./components/Projects";
 import {BrowserRouter , Route ,Routes } from "react-router-dom";
 
 

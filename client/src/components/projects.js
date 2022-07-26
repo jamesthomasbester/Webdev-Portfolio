@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 
 const Projects = () => {
     const [repo, setRepo] = useState([])
-    const [dist, setDist] = useState([])
 
     useEffect(() => {
         const repoData = async () => {
